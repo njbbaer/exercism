@@ -5,10 +5,8 @@ end
 class Hamming
   def self.compute(s1, s2)
     raise ArgumentError if s1.length != s2.length
-    hamming = 0
-    (0..s1.length - 1).each do |i|
-      hamming += 1 if s1[i] != s2[i]
+    s1.chars.zip(s2.chars).count do |l1, l2|
+      l1 != l2
     end
-    hamming
   end
 end
