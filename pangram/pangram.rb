@@ -1,9 +1,8 @@
 module Pangram
-  ALPHABET = 'abcdefghijklmnopqrstuvwxyz'.chars
   def self.pangram?(s)
-    s = s.downcase
-    ALPHABET.each { |l| return false unless s.include? l }
-    true
+    'abcdefghijklmnopqrstuvwxyz'.chars.all? do |l|
+      s.downcase.include? l
+    end
   end
 end
 
