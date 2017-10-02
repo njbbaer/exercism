@@ -3,10 +3,9 @@ module Prime
     raise ArgumentError if n < 1
     primes = []
     2.step do |i|
-      sqrt_i = Math.sqrt(i)
-      primes.push i if primes.none? do |p|
-        break true if p > sqrt_i
-        (i % p).zero?
+      primes.push i if primes.none? do |candidate|
+        break true if candidate**2 > i
+        (i % candidate).zero?
       end
       return i if primes.size == n
     end
