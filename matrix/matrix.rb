@@ -10,6 +10,6 @@ class Matrix
   end
 
   def columns
-    @matrix.transpose
+    rows.transpose
   end
 end
