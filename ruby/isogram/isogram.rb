@@ -1,11 +1,6 @@
-require 'set'
-
 module Isogram
   def self.isogram?(input)
-    chars = Set[]
-    input.delete('- ').downcase.each_char do |c|
-      return false unless chars.add?(c)
-    end
-    true
+    chars = input.delete('- ').downcase.split('')
+    chars.uniq == chars
   end
 end
